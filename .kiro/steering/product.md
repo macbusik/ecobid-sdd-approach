@@ -2,46 +2,50 @@
 inclusion: always
 ---
 
-# Product Vision: EcoBid (AWS 10k AIdeas Challenge)
+# Product Vision: EcoBid (Agentic Circular Marketplace)
 
-## Elevator Pitch
+## Core Value Proposition
 
-EcoBid is a mobile-first PWA that streamlines the "freecycling" process. It replaces chaotic Facebook "trash groups" with a structured platform for giving away and claiming unwanted items. It solves the friction of "who commented first" by introducing a transparent Reservation Queue and uses AI to auto-match "Seekers" with "Givers".
+EcoBid is a mobile-first marketplace that transforms the chaotic "Buy Nothing" groups into an efficient, Agentic Exchange System.
 
-## User Personas
+We replace manual searching with **Autonomous Proxy Agents** and manual listing with **Multimodal AI Vision**.
 
-**The Giver (Donor)**: Has a cluttered home. Wants to get rid of items fast without managing 50 DM conversations.
+## The "Wow" Features (Hackathon Priorities)
 
-**The Seeker (Receiver)**: Individuals, teachers, or foundations looking for specific items (e.g., "plywood," "office chair").
+### 1. Snap & Sell (Multimodal Vision)
 
-**The Community**: Localized groups (Warsaw, Wroclaw) built around trust and reducing waste.
+**Problem**: Posting items is tedious.
 
-## Core Mechanisms (The "Secret Sauce")
+**Solution**: User takes one photo of a cluttered pile (e.g., garage sale style).
 
-### 1. The "Smart Give" Flow (AI Powered)
+**AI Workflow**:
+- **Segment**: AI identifies individual objects in the scene.
+- **Tag & Describe**: Generates title, category, and condition for each item automatically.
+- **Draft**: Creates 5-10 draft listings from a single click.
 
-- User snaps a photo.
-- AWS Rekognition auto-tags the item (e.g., "Chair", "Wood", "Furniture").
-- System suggests a title and category.
-- Item is posted to the local feed.
+**Tech**: Amazon Rekognition (Bounding Boxes) + Bedrock (Claude 3 Haiku for descriptions).
 
-### 2. The "Reservation Queue" (No Bidding Wars)
+### 2. Autonomous Proxy Agents (The "Brain")
 
-**Problem**: On Facebook, it's a race of comments ("Priv", "Me!").
+**Problem**: "First come, first served" favors people glued to their phones.
 
-**Solution**: Users click "Reserve". They enter a Queue.
+**Solution**: Buyers deploy "Proxy Agents" with natural language instructions (e.g., "Find me a wooden desk for a student, nearby").
 
-- Position #1 gets a reservation window (e.g., 4 hours) to chat/confirm pickup.
-- If #1 expires or cancels, the item automatically offers itself to #2.
-- No manual selection by the Giver is required (unless they choose to "bump" someone).
+**AI Workflow**:
+- **Listen**: Agent monitors the stream of new items (Event-Driven).
+- **Reason**: Agent evaluates if an item matches the semantic intent of the user.
+- **Act**: Agent places a "Reservation" or "Bid" instantly if criteria are met.
 
-### 3. The "Seek & Match" Engine (Primary Traffic Driver)
+## User Journey
 
-- Users post "I am looking for X".
-- **Auto-matching**: When a Giver uploads an item, the system checks "Seek" requests.
-- **AI Logic**: If a Giver uploads "Plywood" and a School seeks "Wood sheets", the system notifies the School immediately.
+**Giver**: Snaps photo → Confirms AI suggestions → Item Listed.
+
+**Seeker**: Says "I need a bike" → Closes app.
+
+**System**: AI matches Item to Seeker → Notification: "Your Agent found a match!".
 
 ## Strategic Constraints (AWS Free Tier)
 
 - **Strict No-Cost Policy**: We rely on Free Tier limits (Lambda 400k GB-seconds, DynamoDB 25GB, Rekognition 5k images).
 - **Prototyping Speed**: Logic first, visuals second. Use standard UI components.
+- **Agentic Focus**: Prioritize autonomous agent capabilities over manual workflows.

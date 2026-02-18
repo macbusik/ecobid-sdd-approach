@@ -46,3 +46,8 @@ Thumbs.db
 # PWA
 frontend/dev-dist/
 frontend/dist/
+
+# amplify
+.amplify
+amplify_outputs*
+amplifyconfiguration*
