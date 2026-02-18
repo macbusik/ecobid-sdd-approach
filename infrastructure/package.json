@@ -1,0 +1,23 @@
+{
+  "name": "ecobid-infrastructure",
+  "version": "1.0.0",
+  "bin": {
+    "ecobid": "bin/ecobid.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "cdk": "cdk",
+    "deploy": "cdk deploy --all"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.33",
+    "aws-cdk": "^2.118.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.118.0",
+    "constructs": "^10.3.0",
+    "source-map-support": "^0.5.21"
+  }
+}
