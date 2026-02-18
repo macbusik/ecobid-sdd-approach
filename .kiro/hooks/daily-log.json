@@ -1,0 +1,12 @@
+{
+  "name": "Competition Daily Log",
+  "version": "1.0.0",
+  "description": "Generates a daily work summary for AWS AIdeas Challenge compliance",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Generate a daily progress summary for the AWS AIdeas Challenge. Review recent git commits and create an entry with the following format:\n\n## [Date] Daily Progress\n### Implemented Features\n- (Summarize git diffs and what was built)\n### Architecture Decisions\n- (Explain why specific AWS services were used)\n### AI Agent Interaction\n- (Note: Generated via Kiro Agent)\n\nAppend this summary to docs/kiro-logs/work-log.md. If the file doesn't exist, create it with a header '# EcoBid Development Log - AWS AIdeas Challenge'."
+  }
+}
